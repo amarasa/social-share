@@ -4,7 +4,7 @@
 Plugin Name: Social Share
 Plugin URI: http://kaleidico.com
 Description: Displays Social Share icons below every post
-Version: 1.1
+Version: 1.2
 Author: Angelo Marasa
 */
 
