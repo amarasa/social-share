@@ -4,7 +4,7 @@
 Plugin Name: Social Share
 Plugin URI: http://kaleidico.com
 Description: Displays Social Share icons below every post
-Version: 1.2
+Version: 1.3
 Author: Angelo Marasa
 */
 
@@ -147,37 +147,42 @@ function add_social_share_icons($content)
     $url = esc_url($url);
 
     if (get_option("social-share-facebook") == 1) {
-        $html .= "<div class='facebook xs:mr-4 md:mr-0 mb-4'><a target='_blank' href='http://www.facebook.com/sharer.php?u=" . $url . "'><img src='" . get_template_directory_uri() . "/img/share-facebook.svg' alt='Share on Facebook'></a></div>";
+        $html = $html . "<div class='facebook mr-4 mb-4'><a target='_blank' href='http://www.facebook.com/sharer.php?u=" . $url . "' ><img src='" . get_template_directory_uri() . "/img/share-facebook.svg' alt='Share on Facebook'></a></div>";
     }
 
     if (get_option("social-share-twitter") == 1) {
-        $html .= "<div class='twitter xs:mr-4 md:mr-0 mb-4'><a target='_blank' href='https://twitter.com/share?url=" . $url . "'><img src='" . get_template_directory_uri() . "/img/share-twitter.svg' alt='Share on Twitter'></a></div>";
+        $html = $html . "<div class='twitter mr-4 mb-4'><a target='_blank' href='https://twitter.com/share?url=" . $url . "'><img src='" . get_template_directory_uri() . "/img/share-twitter.svg' alt='Share on Twitter'></a></div>";
     }
 
     if (get_option("social-share-linkedin") == 1) {
-        $html .= "<div class='linkedin xs:mr-4 md:mr-0 mb-4'><a target='_blank' href='http://www.linkedin.com/shareArticle?url=" . $url . "'><img src='" . get_template_directory_uri() . "/img/share-linkedin.svg' alt='Share on LinkedIn'></a></div>";
+        $html = $html . "<div class='linkedin mr-4 mb-4'><a target='_blank' href='http://www.linkedin.com/shareArticle?url=" . $url . "'><img src='" . get_template_directory_uri() . "/img/share-linkedin.svg' alt='Share on LinkedIn'></a></div>";
     }
 
     if (get_option("social-share-reddit") == 1) {
-        $html .= "<div class='reddit xs:mr-4 md:mr-0 mb-4'><a target='_blank' href='http://reddit.com/submit?url=" . $url . "'>Reddit</a></div>";
+        $html = $html . "<div class='reddit mr-4 mb-4'><a target='_blank' href='http://reddit.com/submit?url=" . $url . "'>Reddit</a></div>";
     }
 
     if (get_option("social-share-google-plus") == 1) {
-        $html .= "<div class='google-plus xs:mr-4 md:mr-0 mb-4'><a target='_blank' href='https://plus.google.com/share?url=" . $url . "'>Google+</a></div>";
+        $html = $html . "<div class='google-plus md:mr-0 mb-4'><a target='_blank' href='https://plus.google.com/share?url=" . $url . "'>Google+</a></div>";
     }
 
     if (get_option("social-share-pinterest") == 1) {
-        $html .= "<div class='pinterest xs:mr-4 md:mr-0 mb-4'><a target='_blank' href='http://pinterest.com/pinthis?url=" . $url . "'>Pinterest</a></div>";
+        $html = $html . "<div class='pinterest mr-4 mb-4'><a target='_blank' href='http://pinterest.com/pinthis?url=" . $url . "'>Pinterest</a></div>";
     }
 
     if (get_option("social-share-email") == 1) {
-        $html .= "<div class='email xs:mr-4 md:mr-0 mb-4'><a href='mailto:?subject=Check%20this%20article&body=Hi,%20I%20found%20this%20article%20and%20thought%20you%20might%20like%20it:%20" . $url . "'><img src='" . get_template_directory_uri() . "/img/share-email.svg' alt='Email this Article'></a></div>";
+        $html = $html . "<div class='print mr-4 mb-4'><a href='mailto:?body=Hi, I found this article 
+and thought you might like it " . $url . "'><img src='" . get_template_directory_uri() . "/img/share-email.svg' alt='Email this Article'></a></div>";
     }
 
     if (get_option("social-share-print") == 1) {
-        $html .= "<div class='print xs:mr-4 md:mr-0 mb-4'><a href='javascript:window.print()'><img src='" . get_template_directory_uri() . "/img/share-print.svg' alt='Print this Article'></a></div>";
+        $html = $html . "<div class='print mr-4 mb-4'><a href='javascript:window.print()'><img src='" . get_template_directory_uri() . "/img/share-print.svg' alt='Print this Article'></a></div>";
     }
 
-    return $content . $html;
+    $html = $html . "";
+
+    // return $content = $content . $html;
+    return $html;
 }
+
 add_shortcode("social-share-icons", "add_social_share_icons");
