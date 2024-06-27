@@ -4,7 +4,7 @@
 Plugin Name: Social Share
 Plugin URI: https://github.com/amarasa/social-share
 Description: Displays Social Share icons below every post
-Version: 2.1
+Version: 2.2
 Author: Angelo Marasa
 */
 
@@ -155,7 +155,7 @@ function add_social_share_icons($content)
     foreach ($social_networks as $network => $svg) {
         $option = get_option("social-share-$network");
         if ($option == 1) {
-            $html .= "<div class='$network mr-4 mb-4'><a target='_blank' href='http://$network.com/share?url=$url'>$svg</a></div>";
+            $html .= "<div class='$network'><a target='_blank' href='http://$network.com/share?url=$url'>$svg</a></div>";
         }
     }
 
