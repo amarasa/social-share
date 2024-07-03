@@ -4,7 +4,7 @@
 Plugin Name: Social Share
 Plugin URI: https://github.com/amarasa/social-share
 Description: Displays Social Share icons below every post
-Version: 2.2.1
+Version: 2.2.2
 Author: Angelo Marasa
 */
 
@@ -32,7 +32,7 @@ function social_share_enqueue_styles() {
     $plugin_url = plugin_dir_url(__FILE__);
 
     // Enqueue the stylesheet
-    wp_enqueue_style('social-share-css', $plugin_url . 'css/social-share.css');
+    wp_enqueue_style('social-share-css', $plugin_url . 'social-share.css');
 }
 
 // Hook the function to the wp_enqueue_scripts action
