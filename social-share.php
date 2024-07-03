@@ -166,7 +166,7 @@ function add_social_share_icons($content)
     foreach ($social_networks as $network => $svg) {
         $option = get_option("social-share-$network");
         if ($option == 1) {
-            $html .= "<div class='$network'><a target='_blank' href='http://$network.com/share?url=$url'>$svg</a></div>";
+            $html .= "<div class='$network social-icon'><a target='_blank' href='http://$network.com/share?url=$url'>$svg</a></div>";
         }
     }
 
