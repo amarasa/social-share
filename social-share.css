@@ -1,8 +1,12 @@
 .social-share-icons {
   display: inline-block;
 }
-.social-share-icon {
+.social-icon {
   margin-bottom: 16px;
+  cursor: pointer;
+}
+.social-icon svg {
+  transition: all 300ms ease-in-out;
 }
 .facebook svg {
   	fill: #1877F2;
@@ -12,11 +16,15 @@
 }
 .email svg,
 .print svg {
-  fill: #A9A9A9;
+  fill: #777;
 }
 .pinterest svg {
   fill: #E60023;
 }
 .reddit svg {
   fill: #FF4500;
+}
+
+.social-icon svg:hover {
+  opacity: 0.8;
 }
