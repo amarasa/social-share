@@ -4,7 +4,7 @@
 Plugin Name: Social Share
 Plugin URI: https://github.com/amarasa/social-share
 Description: Displays Social Share icons below every post
-Version: 2.2.2
+Version: 2.2.3
 Author: Angelo Marasa
 */
 
