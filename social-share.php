@@ -4,7 +4,7 @@
 Plugin Name: Social Share
 Plugin URI: https://github.com/amarasa/social-share
 Description: Displays Social Share icons below every post
-Version: 2.2
+Version: 2.2.1
 Author: Angelo Marasa
 */
 
@@ -26,6 +26,17 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 // $myUpdateChecker->setAuthentication('your-token-here');
 
 /* -------------------------------------------------------------------------------------- */
+
+function social_share_enqueue_styles() {
+    // Get the plugin directory URL
+    $plugin_url = plugin_dir_url(__FILE__);
+
+    // Enqueue the stylesheet
+    wp_enqueue_style('social-share-css', $plugin_url . 'css/social-share.css');
+}
+
+// Hook the function to the wp_enqueue_scripts action
+add_action('wp_enqueue_scripts', 'social_share_enqueue_styles');
 
 function social_share_menu_item()
 {
