@@ -1,1 +1,22 @@
-
+.social-share-icons {
+  display: inline-block;
+}
+.social-share-icon {
+  margin-bottom: 16px;
+}
+.facebook svg {
+  	fill: #1877F2;
+}
+.linkedin svg {
+  fill: #0077B5;
+}
+.email svg,
+.print svg {
+  fill: #A9A9A9;
+}
+.pinterest svg {
+  fill: #E60023;
+}
+.reddit svg {
+  fill: #FF4500;
+}
